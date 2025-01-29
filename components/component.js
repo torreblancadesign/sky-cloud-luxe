@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../styles/style.module.css";
+//comment to push to deployment, delete later
 
 const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
@@ -50,3 +51,4 @@ const Component = () => {
 };
 
 export default Component;
+ 
