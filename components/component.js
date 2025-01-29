@@ -34,7 +34,7 @@ const Component = () => {
   return (
     <div className={styles.container}>
       <h2 style={{ color: "black", marginBottom: "8px" }}>Verify Your Watch Warranty</h2>
-      <p style={{ fontSize: "14px", color: "lightblue", marginBottom: "16px" }}>
+      <p style={{ fontSize: "14px", color: "#007bff", marginBottom: "16px" }}>
         Enter the 16-digit warranty code found on the back of your warranty card to view your watch details and/or to submit a claim.
       </p>
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -46,7 +46,7 @@ const Component = () => {
           className={styles.input}
           value={warrantyNumber}
           onChange={e => setWarrantyNumber(e.target.value)}
-          placeholder="Enter warranty number"
+          placeholder="warranty number..."
         />
         <button type="submit" className={styles.button}>
           Submit
