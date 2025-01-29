@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "../styles/style.module.css";
-//comment to push to deployment, delete later
 
 const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
@@ -34,7 +33,14 @@ const Component = () => {
 
   return (
     <div className={styles.container}>
+      <h2 style={{ color: "black", marginBottom: "8px" }}>Verify Your Watch Warranty</h2>
+      <p style={{ fontSize: "14px", color: "lightblue", marginBottom: "16px" }}>
+        Enter the 16-digit warranty code found on the back of your warranty card to view your watch details and/or to submit a claim.
+      </p>
       <form className={styles.form} onSubmit={handleSubmit}>
+        <label style={{ display: "block", marginBottom: "6px", fontWeight: "bold" }}>
+          Enter your warranty code (required)
+        </label>
         <input
           type="text"
           className={styles.input}
@@ -51,4 +57,5 @@ const Component = () => {
 };
 
 export default Component;
+
  
