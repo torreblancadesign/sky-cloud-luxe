@@ -47,8 +47,28 @@ const Component = () => {
           value={warrantyNumber}
           onChange={e => setWarrantyNumber(e.target.value)}
           placeholder="warranty number..."
+          style={{
+            borderRadius: "999px",
+            padding: "12px 20px",
+            border: "1px solid #ccc",
+            width: "100%",
+            outline: "none"
+          }}
         />
-        <button type="submit" className={styles.button}>
+        <button 
+          type="submit" 
+          className={styles.button}
+          style={{
+            borderRadius: "999px",
+            padding: "12px 20px",
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            cursor: "pointer",
+            fontWeight: "bold",
+            width: "100%"
+          }}
+        >
           Submit
         </button>
       </form>
@@ -57,5 +77,6 @@ const Component = () => {
 };
 
 export default Component;
+
 
  
