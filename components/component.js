@@ -60,7 +60,7 @@ const Component = () => {
       <h2 style={{ color: "black", marginBottom: "8px" }}>Verify Your Watch Warranty</h2>
       {!warrantyData ? (
         <>
-          <p style={{ fontSize: "14px", color: "#007bff", marginBottom: "16px" }}>
+          <p style={{ fontSize: "14px", color: "#0078B3", marginBottom: "16px" }}>
             Enter the 16-digit warranty code found on the back of your warranty card to view your watch details and/or to submit a claim.
           </p>
           {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
