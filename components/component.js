@@ -88,7 +88,7 @@ const Component = () => {
               style={{
                 borderRadius: "999px",
                 padding: "12px 20px",
-                backgroundColor: "#007bff",
+                backgroundColor: "#0078B3",
                 color: "white",
                 border: "none",
                 cursor: "pointer",
@@ -101,7 +101,7 @@ const Component = () => {
           </form>
         </>
       ) : (
-        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#f9f9f9" }}>
+        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff" }}>
           {warrantyData.thumbnailImage && (
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
@@ -125,7 +125,7 @@ const Component = () => {
               marginTop: "10px",
               borderRadius: "999px",
               padding: "12px 20px",
-              backgroundColor: "#007bff",
+              backgroundColor: "#0078B3",
               color: "white",
               border: "none",
               cursor: "pointer",
