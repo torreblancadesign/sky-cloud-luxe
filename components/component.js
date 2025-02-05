@@ -19,7 +19,7 @@ const Component = () => {
         {
           method: "GET",
           headers: {
-            Authorization: "Bearer patjuRrHGpdA3SdRb.84cf94ba5374da58c8468374d41f4cf06e2ea0a7f2f9750a0fbb8de50c94e320",
+            Authorization: "Bearer apikey",
             "Content-Type": "application/json",
           },
         }
@@ -33,8 +33,16 @@ const Component = () => {
       if (data.records.length > 0) {
         const record = data.records[0].fields;
         setWarrantyData({
-          product: record["Product"],
           serialNumber: record["Serial Number"],
+          product: record["Product"],
+          referenceNumber: record["Reference Number"],
+          purchaseDate: record["Purchase Date"],
+          warrantyStart: record["Warranty Start"],
+          warrantyEnd: record["Warranty End"],
+          brand: record["Brand"],
+          band: record["Band"],
+          dial: record["Dial"],
+          thumbnailImage: record["Thumbnail Image"] ? record["Thumbnail Image"][0].url : null,
         });
         setError(null);
       } else {
@@ -94,9 +102,19 @@ const Component = () => {
         </>
       ) : (
         <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#f9f9f9" }}>
+          {warrantyData.thumbnailImage && (
+            <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
+          )}
           <h3 style={{ color: "#007bff" }}>Warranty Details</h3>
-          <p><strong>Product:</strong> {warrantyData.product}</p>
-          <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>
+          {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
+          {warrantyData.product && <p><strong>Product:</strong> {warrantyData.product}</p>}
+          {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
+          {warrantyData.purchaseDate && <p><strong>Purchase Date:</strong> {warrantyData.purchaseDate}</p>}
+          {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
+          {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
+          {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
+          {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
+          {warrantyData.dial && <p><strong>Dial:</strong> {warrantyData.dial}</p>}
           <button
             onClick={() => {
               setWarrantyData(null);
@@ -124,5 +142,4 @@ const Component = () => {
 };
 
 export default Component;
-
  
