@@ -69,7 +69,7 @@ const Component = () => {
             width: "100%"
           }}
         >
-          Submit
+          Verify Warranty
         </button>
       </form>
     </div>
