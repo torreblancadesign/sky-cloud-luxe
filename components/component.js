@@ -19,7 +19,7 @@ const Component = () => {
         {
           method: "GET",
           headers: {
-            Authorization: "Bearer apikey",
+            Authorization: "Bearer patjuRrHGpdA3SdRb.84cf94ba5374da58c8468374d41f4cf06e2ea0a7f2f9750a0fbb8de50c94e320",
             "Content-Type": "application/json",
           },
         }
