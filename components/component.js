@@ -5,6 +5,16 @@ const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
   const [warrantyData, setWarrantyData] = useState(null);
   const [error, setError] = useState(null);
+  const [containerHeight, setContainerHeight] = useState("auto");
+
+  useEffect(() => {
+    const updateHeight = () => {
+      setContainerHeight(window.innerHeight + "px");
+    };
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +29,7 @@ const Component = () => {
         {
           method: "GET",
           headers: {
-            Authorization: "Bearer patjuRrHGpdA3SdRb.84cf94ba5374da58c8468374d41f4cf06e2ea0a7f2f9750a0fbb8de50c94e320",
+            Authorization: "Bearer YOUR_AIRTABLE_API_KEY",
             "Content-Type": "application/json",
           },
         }
@@ -57,16 +67,33 @@ const Component = () => {
   };
 
   return (
-    <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "20px", minHeight: "auto" }}>
-      <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px" }}>Verify Your Watch Warranty</h2>
+    <div className={styles.container} style={{ 
+      display: "flex", 
+      flexDirection: "column", 
+      justifyContent: "center", 
+      alignItems: "center", 
+      paddingTop: "20px", 
+      height: containerHeight, 
+      overflow: "hidden", 
+      fontFamily: "'Inter', sans-serif" 
+    }}>
+      <h2 style={{ 
+        color: "black", 
+        marginBottom: "8px", 
+        marginTop: "10px", 
+        fontFamily: "'Inter', sans-serif", 
+        fontWeight: "500" 
+      }}>
+        Verify Your Watch Warranty
+      </h2>
       {!warrantyData ? (
         <>
-          <p style={{ fontSize: "14px", color: "#0078B3", marginBottom: "16px", textAlign: "center" }}>
+          <p style={{ fontSize: "14px", color: "#0078B3", marginBottom: "16px", textAlign: "center", fontFamily: "'Inter', sans-serif" }}>
             Enter the 16-digit warranty code found on the back of your warranty card to view your watch details and/or to submit a claim.
           </p>
-          {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
+          {error && <p style={{ color: "red", marginBottom: "8px", fontFamily: "'Inter', sans-serif" }}>{error}</p>}
           <form className={styles.form} onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "400px" }}>
-            <label style={{ display: "block", marginBottom: "6px", fontWeight: "bold" }}>
+            <label style={{ display: "block", marginBottom: "6px", fontWeight: "bold", fontFamily: "'Inter', sans-serif" }}>
               Enter your warranty code (required)
             </label>
             <input
@@ -81,6 +108,7 @@ const Component = () => {
                 border: "1px solid #ccc",
                 width: "100%",
                 outline: "none",
+                fontFamily: "'Inter', sans-serif"
               }}
             />
             <button
@@ -96,6 +124,7 @@ const Component = () => {
                 fontWeight: "bold",
                 width: "100%",
                 marginTop: "10px",
+                fontFamily: "'Inter', sans-serif"
               }}
             >
               Verify Warranty
@@ -103,21 +132,11 @@ const Component = () => {
           </form>
         </>
       ) : (
-        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff", width: "100%", maxWidth: "500px", minHeight: "auto" }}>
+        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff", width: "100%", maxWidth: "500px" }}>
           {warrantyData.thumbnailImage && (
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
-          <h3 style={{ color: "#0078B3" }}>Warranty Details</h3>
-          {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
-          {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
-          {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
-          {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
-          {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
-          {warrantyData.dial && <p><strong>Dial:</strong> {warrantyData.dial}</p>}
-          {warrantyData.purchaseDate && <p><strong>Purchase Date:</strong> {warrantyData.purchaseDate}</p>}
-          {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
-          {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
-          {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
+          <h3 style={{ color: "#0078B3", fontFamily: "'Inter', sans-serif" }}>Warranty Details</h3>
         </div>
       )}
     </div>
