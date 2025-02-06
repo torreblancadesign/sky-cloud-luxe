@@ -5,16 +5,6 @@ const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
   const [warrantyData, setWarrantyData] = useState(null);
   const [error, setError] = useState(null);
-  const [containerHeight, setContainerHeight] = useState("auto");
-
-  useEffect(() => {
-    const updateHeight = () => {
-      setContainerHeight(window.innerHeight + "px");
-    };
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -67,7 +57,7 @@ const Component = () => {
   };
 
   return (
-    <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", paddingTop: "20px", height: containerHeight, overflow: "hidden" }}>
+    <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "20px", minHeight: "auto" }}>
       <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px" }}>Verify Your Watch Warranty</h2>
       {!warrantyData ? (
         <>
@@ -113,7 +103,7 @@ const Component = () => {
           </form>
         </>
       ) : (
-        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff", width: "100%", maxWidth: "500px" }}>
+        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff", width: "100%", maxWidth: "500px", minHeight: "auto" }}>
           {warrantyData.thumbnailImage && (
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
