@@ -31,7 +31,7 @@ const Component = () => {
         {
           method: "GET",
           headers: {
-            Authorization: "Bearer patjuRrHGpdA3SdRb.84cf94ba5374da58c8468374d41f4cf06e2ea0a7f2f9750a0fbb8de50c94e320",
+            Authorization: "Bearer YOUR_AIRTABLE_API_KEY",
             "Content-Type": "application/json",
           },
         }
@@ -69,8 +69,8 @@ const Component = () => {
   };
 
   return (
-    <div className={styles.container} style={{ height: iframeHeight }}>
-      <h2 style={{ color: "black", marginBottom: "8px" }}>Verify Your Watch Warranty</h2>
+    <div className={styles.container} style={{ height: iframeHeight, overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
+      <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px" }}>Verify Your Watch Warranty</h2>
       {!warrantyData ? (
         <>
           <p style={{ fontSize: "14px", color: "#0078B3", marginBottom: "16px" }}>
@@ -129,26 +129,6 @@ const Component = () => {
           {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
           {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
           {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
-          <button
-            onClick={() => {
-              setWarrantyData(null);
-              setWarrantyNumber("");
-            }}
-            className={styles.button}
-            style={{
-              marginTop: "10px",
-              borderRadius: "999px",
-              padding: "12px 20px",
-              backgroundColor: "#0078B3",
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-              fontWeight: "bold",
-              width: "100%",
-            }}
-          >
-            Enter a New Warranty Code
-          </button>
         </div>
       )}
     </div>
