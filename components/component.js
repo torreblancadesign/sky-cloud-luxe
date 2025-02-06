@@ -107,8 +107,8 @@ const Component = () => {
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
           <h3 style={{ color: "#0078B3" }}>Warranty Details</h3>
-          {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
           {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
+          {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
           {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
           {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
           {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
