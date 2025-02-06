@@ -35,7 +35,7 @@ const Component = () => {
         const record = data.records[0].fields;
         setWarrantyData({
           thumbnailImage: record["Thumbnail Image"] ? record["Thumbnail Image"][0].url : null,
-          model: record["Product"],
+          model: record["Model"],
           brand: record["Brand"],
           referenceNumber: record["Reference Number"],
           serialNumber: record["Serial Number"],
