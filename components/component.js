@@ -5,12 +5,12 @@ const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
   const [warrantyData, setWarrantyData] = useState(null);
   const [error, setError] = useState(null);
-  const [iframeHeight, setIframeHeight] = useState("80vh");
+  const [iframeHeight, setIframeHeight] = useState("100vh");
 
   useEffect(() => {
     const updateHeight = () => {
       const screenHeight = window.innerHeight;
-      setIframeHeight(screenHeight > 800 ? "80vh" : "100vh");
+      setIframeHeight(screenHeight > 800 ? "100vh" : "100vh");
     };
     
     updateHeight();
@@ -69,15 +69,15 @@ const Component = () => {
   };
 
   return (
-    <div className={styles.container} style={{ height: iframeHeight, overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-start" }}>
+    <div className={styles.container} style={{ height: iframeHeight, overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "20px" }}>
       <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px" }}>Verify Your Watch Warranty</h2>
       {!warrantyData ? (
         <>
-          <p style={{ fontSize: "14px", color: "#0078B3", marginBottom: "16px" }}>
+          <p style={{ fontSize: "14px", color: "#0078B3", marginBottom: "16px", textAlign: "center" }}>
             Enter the 16-digit warranty code found on the back of your warranty card to view your watch details and/or to submit a claim.
           </p>
           {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
-          <form className={styles.form} onSubmit={handleSubmit}>
+          <form className={styles.form} onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "400px" }}>
             <label style={{ display: "block", marginBottom: "6px", fontWeight: "bold" }}>
               Enter your warranty code (required)
             </label>
@@ -107,6 +107,7 @@ const Component = () => {
                 cursor: "pointer",
                 fontWeight: "bold",
                 width: "100%",
+                marginTop: "10px",
               }}
             >
               Verify Warranty
@@ -114,7 +115,7 @@ const Component = () => {
           </form>
         </>
       ) : (
-        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff" }}>
+        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff", width: "100%", maxWidth: "500px" }}>
           {warrantyData.thumbnailImage && (
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
