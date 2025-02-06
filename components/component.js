@@ -34,11 +34,12 @@ const Component = () => {
         const record = data.records[0].fields;
         setWarrantyData({
           serialNumber: record["Serial Number"],
-          product: record["Product"],
+          model: record["Model"],
           referenceNumber: record["Reference Number"],
           purchaseDate: record["Purchase Date"],
           warrantyStart: record["Warranty Start"],
           warrantyEnd: record["Warranty End"],
+          warrantyStatus: record["Warranty Status"],
           brand: record["Brand"],
           band: record["Band"],
           dial: record["Dial"],
