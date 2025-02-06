@@ -106,15 +106,16 @@ const Component = () => {
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
           <h3 style={{ color: "#0078B3" }}>Warranty Details</h3>
-          {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
-          {warrantyData.product && <p><strong>Product:</strong> {warrantyData.product}</p>}
+          {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
+          {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
           {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
+          {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
+          {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
+          {warrantyData.dial && <p><strong>Dial:</strong> {warrantyData.dial}</p>}
           {warrantyData.purchaseDate && <p><strong>Purchase Date:</strong> {warrantyData.purchaseDate}</p>}
           {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
           {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
-          {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
-          {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
-          {warrantyData.dial && <p><strong>Dial:</strong> {warrantyData.dial}</p>}
+          {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
           <button
             onClick={() => {
               setWarrantyData(null);
