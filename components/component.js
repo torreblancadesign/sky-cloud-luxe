@@ -5,18 +5,6 @@ const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
   const [warrantyData, setWarrantyData] = useState(null);
   const [error, setError] = useState(null);
-  const [iframeHeight, setIframeHeight] = useState("100vh");
-
-  useEffect(() => {
-    const updateHeight = () => {
-      const screenHeight = window.innerHeight;
-      setIframeHeight(screenHeight > 800 ? "100vh" : "100vh");
-    };
-    
-    updateHeight();
-    window.addEventListener("resize", updateHeight);
-    return () => window.removeEventListener("resize", updateHeight);
-  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -31,7 +19,7 @@ const Component = () => {
         {
           method: "GET",
           headers: {
-            Authorization: "Bearer YOUR_AIRTABLE_API_KEY",
+            Authorization: "Bearer patjuRrHGpdA3SdRb.84cf94ba5374da58c8468374d41f4cf06e2ea0a7f2f9750a0fbb8de50c94e320",
             "Content-Type": "application/json",
           },
         }
@@ -69,7 +57,7 @@ const Component = () => {
   };
 
   return (
-    <div className={styles.container} style={{ height: iframeHeight, overflow: "hidden", display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "20px" }}>
+    <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "20px", minHeight: "auto" }}>
       <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px" }}>Verify Your Watch Warranty</h2>
       {!warrantyData ? (
         <>
@@ -115,7 +103,7 @@ const Component = () => {
           </form>
         </>
       ) : (
-        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff", width: "100%", maxWidth: "500px" }}>
+        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#ffffff", width: "100%", maxWidth: "500px", minHeight: "auto" }}>
           {warrantyData.thumbnailImage && (
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
