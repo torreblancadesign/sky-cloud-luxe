@@ -1,10 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "../styles/style.module.css";
 
 const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
   const [warrantyData, setWarrantyData] = useState(null);
   const [error, setError] = useState(null);
+  const [iframeHeight, setIframeHeight] = useState("80vh");
+
+  useEffect(() => {
+    const updateHeight = () => {
+      const screenHeight = window.innerHeight;
+      setIframeHeight(screenHeight > 800 ? "80vh" : "100vh");
+    };
+    
+    updateHeight();
+    window.addEventListener("resize", updateHeight);
+    return () => window.removeEventListener("resize", updateHeight);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -33,17 +45,17 @@ const Component = () => {
       if (data.records.length > 0) {
         const record = data.records[0].fields;
         setWarrantyData({
-          serialNumber: record["Serial Number"],
-          model: record["Model"],
+          thumbnailImage: record["Thumbnail Image"] ? record["Thumbnail Image"][0].url : null,
+          model: record["Product"],
+          brand: record["Brand"],
           referenceNumber: record["Reference Number"],
+          serialNumber: record["Serial Number"],
+          band: record["Band"],
+          dial: record["Dial"],
           purchaseDate: record["Purchase Date"],
           warrantyStart: record["Warranty Start"],
           warrantyEnd: record["Warranty End"],
           warrantyStatus: record["Warranty Status"],
-          brand: record["Brand"],
-          band: record["Band"],
-          dial: record["Dial"],
-          thumbnailImage: record["Thumbnail Image"] ? record["Thumbnail Image"][0].url : null,
         });
         setError(null);
       } else {
@@ -57,7 +69,7 @@ const Component = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} style={{ height: iframeHeight }}>
       <h2 style={{ color: "black", marginBottom: "8px" }}>Verify Your Watch Warranty</h2>
       {!warrantyData ? (
         <>
@@ -107,8 +119,8 @@ const Component = () => {
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
           <h3 style={{ color: "#0078B3" }}>Warranty Details</h3>
-          {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
           {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
+          {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
           {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
           {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
           {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
@@ -144,4 +156,3 @@ const Component = () => {
 };
 
 export default Component;
- 
