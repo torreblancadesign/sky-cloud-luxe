@@ -104,7 +104,7 @@ const Component = () => {
           </form>
         </>
       ) : (
-        <div style={{ textAlign: "center", padding: "20px", border: "1px solid #ccc", borderRadius: "10px", backgroundColor: "#EAEAEE", width: "100%", maxWidth: "500px", minHeight: "auto" }}>
+        <div style={{ textAlign: "center", padding: "20px", border: "0px solid #ccc", borderRadius: "10px", backgroundColor: "#EAEAEE", width: "100%", maxWidth: "500px", minHeight: "auto" }}>
           {warrantyData.thumbnailImage && (
             <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
           )}
