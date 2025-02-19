@@ -42,6 +42,7 @@ const Component = () => {
           band: record["Band"],
           dial: record["Dial"],
           purchaseDate: record["Purchase Date"],
+          warrantyID: record["Warranty ID"],
           warrantyStart: record["Warranty Start"],
           warrantyEnd: record["Warranty End"],
           warrantyStatus: record["Warranty Status"],
@@ -116,6 +117,7 @@ const Component = () => {
           {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
           {warrantyData.dial && <p><strong>Dial:</strong> {warrantyData.dial}</p>}
           {warrantyData.purchaseDate && <p><strong>Purchase Date:</strong> {warrantyData.purchaseDate}</p>}
+          {warrantyData.warrantyID && <p><strong>Warranty ID:</strong> {warrantyData.warrantyID}</p>}
           {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
           {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
           {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
