@@ -12,13 +12,14 @@
   width: 100%;
   max-width: 400px;
   margin: 50px auto;
-  font-family: "Arial Narrow", Impact, "Franklin Gothic Medium", sans-serif;
+  font-family: Tahoma, sans-serif;
 }
 
 .form {
   width: 100%;
   
-  font-family: "Arial Narrow", Impact, "Franklin Gothic Medium", sans-serif;
+  font-family: Tahoma, sans-serif;
+
 }
 
 .input {
@@ -31,14 +32,16 @@
   box-sizing: border-box;
   transition: border-color 0.3s;
   
-  font-family: "Arial Narrow", Impact, "Franklin Gothic Medium", sans-serif;
+  font-family: Tahoma, sans-serif;
+
 }
 
 .input:focus {
   border-color: #0056b3;
   outline: none;
 
-  font-family: "Arial Narrow", Impact, "Franklin Gothic Medium", sans-serif;
+  font-family: Tahoma, sans-serif;
+
 }
 
 .button {
@@ -53,7 +56,8 @@
   border-radius: 4px;
   transition: background-color 0.3s;
 
-  font-family: "Arial Narrow", Impact, "Franklin Gothic Medium", sans-serif;
+  font-family: Tahoma, sans-serif;
+
 }
 
 .button:hover {
