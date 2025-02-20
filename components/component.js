@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/style.module.css";
 
+
 const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
   const [warrantyData, setWarrantyData] = useState(null);
@@ -60,10 +61,10 @@ const Component = () => {
 
   return (
     <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "20px", minHeight: "auto" }}>
-      <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px", font-family: "Arial Narrow", Impact, sans-serif;}}>Certificate of Authenticity</h2>
+      <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px", fontFamily: 'Antonio, sans-serif'}}>Certificate of Authenticity</h2>
       {!warrantyData ? (
         <>
-          <p style={{ fontSize: "16px", color: "#0078B3", marginBottom: "16px", textAlign: "center", font-family: "Arial Narrow", Impact, sans-serif;}}>
+          <p style={{ fontSize: "16px", color: "#0078B3", marginBottom: "16px", textAlign: "center", fontFamily: 'Antonio, sans-serif'}}>
             Enter the 16-digit warranty code found on the back of your warranty card to view your watch details and/or to submit a claim.
           </p>
           {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
@@ -135,7 +136,7 @@ const Component = () => {
               fontWeight: "bold",
               width: "100%",
               maxWidth: "400px",
-              font-family: "Arial Narrow", Impact, sans-serif;
+              fontFamily: 'Antonio, sans-serif';
             }}
           >
             Submit Claim
