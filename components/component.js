@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "../styles/style.module.css";
 
-
 const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
   const [warrantyData, setWarrantyData] = useState(null);
