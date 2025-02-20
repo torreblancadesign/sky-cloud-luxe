@@ -135,7 +135,7 @@ const Component = () => {
               fontWeight: "bold",
               width: "100%",
               maxWidth: "400px",
-              fontFamily: "Arial Narrow", Arial, sans-serif;
+              fontFamily: font-family: 'Antonio', sans-serif;;
             }}
           >
             Submit Claim
