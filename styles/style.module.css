@@ -1,4 +1,5 @@
 /* style.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap');
 
 
 .container {
@@ -13,12 +14,12 @@
   width: 100%;
   max-width: 400px;
   margin: 50px auto;
-  font-family: "Arial Narrow", Arial, sans-serif;
+  font-family: 'Antonio', sans-serif;
 
 .form {
   width: 100%;
   
-  font-family: Impact, sans-serif;
+  font-family: 'Antonio', sans-serif;
 }
 
 .input {
@@ -31,14 +32,14 @@
   box-sizing: border-box;
   transition: border-color 0.3s;
   
-  font-family: "Arial Narrow", Arial, sans-serif;
+  font-family: 'Antonio', sans-serif;
 }
 
 .input:focus {
   border-color: #0056b3;
   outline: none;
 
-  font-family: "Arial Narrow", Arial, sans-serif;
+  font-family: 'Antonio', sans-serif;
 }
 
 .button {
@@ -53,7 +54,7 @@
   border-radius: 4px;
   transition: background-color 0.3s;
 
-  font-family: "Arial Narrow", Arial, sans-serif;
+  font-family: 'Antonio', sans-serif;
 }
 
 .button:hover {
