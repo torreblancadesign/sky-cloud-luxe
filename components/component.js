@@ -136,6 +136,7 @@ const Component = () => {
               fontWeight: "bold",
               width: "100%",
               maxWidth: "400px",
+              fontFamily: "'Inter', sans-serif"
             
             }}
           >
