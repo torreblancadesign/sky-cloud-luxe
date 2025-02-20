@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@100;200;300;400;500;600;700&display=swap');
 
 * {
-    font-family: 'Antonio', sans-serif !important;
+    font-family: "Arial Narrow", Arial, sans-serif !important;
 }
 
 
@@ -18,7 +18,7 @@
   width: 100%;
   max-width: 400px;
   margin: 50px auto;
-  font-family: 'Antonio', sans-serif;
+  font-family: "Arial Narrow", Arial, sans-serif;
 }
 
 .form {
@@ -37,14 +37,14 @@
   box-sizing: border-box;
   transition: border-color 0.3s;
   
-  font-family: 'Antonio', sans-serif;
+  font-family: "Arial Narrow", Arial, sans-serif;
 }
 
 .input:focus {
   border-color: #0056b3;
   outline: none;
 
-  font-family: 'Antonio', sans-serif;
+  font-family: "Arial Narrow", Arial, sans-serif;
 }
 
 .button {
@@ -59,7 +59,7 @@
   border-radius: 4px;
   transition: background-color 0.3s;
 
-  font-family: 'Antonio', sans-serif;
+  font-family: "Arial Narrow", Arial, sans-serif;
 }
 
 .button:hover {
