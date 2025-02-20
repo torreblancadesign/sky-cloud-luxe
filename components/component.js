@@ -60,7 +60,7 @@ const Component = () => {
 
   return (
     <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "20px", minHeight: "auto" }}>
-      <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px" }}>Verify Your Watch Warranty</h2>
+      <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px" }}>Certificate of Authenticity</h2>
       {!warrantyData ? (
         <>
           <p style={{ fontSize: "16px", color: "#0078B3", marginBottom: "16px", textAlign: "center" }}>
