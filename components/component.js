@@ -64,8 +64,8 @@ const Component = () => {
       <h2 style={{ color: "black", marginBottom: "8px", marginTop: "10px"}}>Certificate of Authenticity</h2>
       {!warrantyData ? (
         <>
-          <p style={{ fontSize: "16px", color: "#0078B3", marginBottom: "16px", textAlign: "center", fontFamily: "'Inter', sans-serif"}}>
-            Enter the 16-digit warranty code found on the back of your warranty card to view your watch details and/or to submit a claim.
+          <p style={{ fontSize: "16px", color: "#0078B3", marginBottom: "16px", textAlign: "center"}}>
+            Enter the 16-digit warranty code including dashes found on the back of your warranty card to view your watch details and/or to submit a claim.
           </p>
           {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
           <form className={styles.form} onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "400px" }}>
