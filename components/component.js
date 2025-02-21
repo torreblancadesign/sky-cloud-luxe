@@ -107,9 +107,9 @@ const Component = () => {
       ) : (
         <div style={{ textAlign: "center", padding: "12px", border: "0px solid #ccc", borderRadius: "10px", backgroundColor: "#f4f4f6", width: "100%", maxWidth: "500px", minHeight: "auto" }}>
           {warrantyData.thumbnailImage && (
-            <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "10px" }} />
+            <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", borderRadius: "10px", marginBottom: "6px" }} />
           )}
-          <h3 style={{ color: "#0078B3" }}>Warranty Details</h3>
+          <h3 style={{ color: "#0078B3", marginBottom: "8px" }}>Warranty Details</h3>
           {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
           {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
           {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
