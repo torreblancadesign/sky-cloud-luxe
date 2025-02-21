@@ -17,6 +17,7 @@
   overflow-y: hidden;
   overflow: hidden;
   max-height: 95vh; 
+  box-sizing: border-box;
 }
 
 .form {
