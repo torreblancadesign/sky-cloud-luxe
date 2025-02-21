@@ -126,7 +126,7 @@ const Component = () => {
             onClick={() => window.location.reload()} // Refreshes the page
             className={styles.button}
             style={{
-              marginBottom: "12px", // Adds space below this button
+              marginBottom: "6px", // Adds space below this button
               borderRadius: "999px",
               padding: "8px 14px",
               backgroundColor: "#0078B3", 
