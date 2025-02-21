@@ -121,6 +121,27 @@ const Component = () => {
           {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
           {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
           {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
+
+            <button
+            onClick={() => window.location.reload()} // Refreshes the page
+            className={styles.button}
+            style={{
+              marginBottom: "12px", // Adds space below this button
+              borderRadius: "999px",
+              padding: "8px 14px",
+              backgroundColor: "#0078B3", 
+              color: "white",
+              border: "none",
+              cursor: "pointer",
+              fontWeight: "bold",
+              width: "100%",
+              maxWidth: "400px",
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            Verify Another Warranty
+          </button>
+            
             <button
             onClick={() => window.open(`https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(warrantyData.warrantyID)}`, '_blank')}
             className={styles.button}
