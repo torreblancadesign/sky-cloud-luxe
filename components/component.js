@@ -141,6 +141,11 @@ const Component = () => {
           >
             Submit Claim
           </button>
+              
+          <p style={{ marginTop: "12px", fontSize: "14px", color: "#333", textAlign: "center" }}>
+            Contact us: <a href="mailto:info@skycloudluxe.com" style={{ color: "#0078B3", textDecoration: "none", fontWeight: "bold" }}>info@skycloudluxe.com</a>
+          </p>
+              
         </div>
       )}
     </div>
