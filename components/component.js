@@ -146,7 +146,7 @@ const Component = () => {
             onClick={() => window.open(`https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(warrantyData.warrantyID)}`, '_blank')}
             className={styles.button}
             style={{
-              marginTop: "20px",
+              marginTop: "10px",
               borderRadius: "999px",
               padding: "8px 14px",
               backgroundColor: "#0078B3",
