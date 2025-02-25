@@ -145,59 +145,14 @@ const Component = () => {
     Submit Claim
   </button>
 
-  {/* Flexbox for Side-by-Side Buttons */}
-  <div style={{
-      display: "flex",
-      justifyContent: "center",
-      gap: "10px",
-      marginBottom: "6px"
-  }}>
-    {/* Verify Another Warranty Button */}
-    <button
-      onClick={() => window.location.reload()} // Refreshes the page
-      className={styles.button}
-      style={{
-        borderRadius: "999px",
-        padding: "8px 14px",
-        backgroundColor: "#0078B3",
-        color: "white",
-        border: "none",
-        cursor: "pointer",
-        fontWeight: "bold",
-        width: "100%",
-        maxWidth: "190px",
-        fontFamily: "'Inter', sans-serif",
-      }}
-    >
-      Verify Another Warranty
-    </button>
+  <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "6px" }}>
+            <button onClick={() => window.location.reload()} className={styles.button} style={{ ...buttonStyle }}>Verify Another Warranty</button>
+            <button onClick={() => window.open('https://your-link-here.com', '_blank')} className={styles.button} style={{ ...buttonStyle }}>Warranty Information</button>
+          </div>
 
-    {/* Warranty Information Button */}
-    <button
-      onClick={() => window.open('https://your-link-here.com', '_blank')} // Opens warranty info link
-      className={styles.button}
-      style={{
-        borderRadius: "999px",
-        padding: "8px 14px",
-        backgroundColor: "#0078B3",
-        color: "white",
-        border: "none",
-        cursor: "pointer",
-        fontWeight: "bold",
-        width: "100%",
-        maxWidth: "190px",
-        fontFamily: "'Inter', sans-serif",
-      }}
-    >
-      Warranty Information
-    </button>
-            
-
-              
           <p style={{ marginTop: "12px", fontSize: "14px", color: "#333", textAlign: "center" }}>
             Contact us: <a href="mailto:info@skycloudluxe.com" style={{ color: "#0078B3", textDecoration: "none", fontWeight: "bold" }}>info@skycloudluxe.com</a>
           </p>
-              
         </div>
       )}
     </div>
