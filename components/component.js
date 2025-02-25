@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import styles from "../styles/style.module.css";
 
@@ -122,37 +121,51 @@ const Component = () => {
           {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
           {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
 
+            <button
+            onClick={() => window.location.reload()} // Refreshes the page
+            className={styles.button}
+            style={{
+              marginBottom: "6px", // Adds space below this button
+              borderRadius: "999px",
+              padding: "8px 14px",
+              backgroundColor: "#0078B3", 
+              color: "white",
+              border: "none",
+              cursor: "pointer",
+              fontWeight: "bold",
+              width: "100%",
+              maxWidth: "400px",
+              fontFamily: "'Inter', sans-serif",
+            }}
+          >
+            Verify Another Warranty
+          </button>
             
-              {/* Submit Claim Button */}
-  <button
-    onClick={() => window.open(`https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(warrantyData.warrantyID)}`, '_blank')}
-    className={styles.button}
-    style={{
-      marginTop: "6px",
-      marginBottom: "6px",
-      borderRadius: "999px",
-      padding: "8px 14px",
-      backgroundColor: "#0078B3",
-      color: "white",
-      border: "none",
-      cursor: "pointer",
-      fontWeight: "bold",
-      width: "100%",
-      maxWidth: "400px",
-      fontFamily: "'Inter', sans-serif"
-    }}
-  >
-    Submit Claim
-  </button>
-
-  <div style={{ display: "flex", justifyContent: "center", gap: "10px", marginBottom: "6px" }}>
-            <button onClick={() => window.location.reload()} className={styles.button} style={{ ...buttonStyle }}>Verify Another Warranty</button>
-            <button onClick={() => window.open('https://your-link-here.com', '_blank')} className={styles.button} style={{ ...buttonStyle }}>Warranty Information</button>
-          </div>
-
+            <button
+            onClick={() => window.open(`https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(warrantyData.warrantyID)}`, '_blank')}
+            className={styles.button}
+            style={{
+              marginTop: "10px",
+              borderRadius: "999px",
+              padding: "8px 14px",
+              backgroundColor: "#0078B3",
+              color: "white",
+              border: "none",
+              cursor: "pointer",
+              fontWeight: "bold",
+              width: "100%",
+              maxWidth: "400px",
+              fontFamily: "'Inter', sans-serif"
+            
+            }}
+          >
+            Submit Claim
+          </button>
+              
           <p style={{ marginTop: "12px", fontSize: "14px", color: "#333", textAlign: "center" }}>
             Contact us: <a href="mailto:info@skycloudluxe.com" style={{ color: "#0078B3", textDecoration: "none", fontWeight: "bold" }}>info@skycloudluxe.com</a>
           </p>
+              
         </div>
       )}
     </div>
