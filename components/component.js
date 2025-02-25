@@ -123,47 +123,74 @@ const Component = () => {
           {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
 
             
-            <button
-            onClick={() => window.open(`https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(warrantyData.warrantyID)}`, '_blank')}
-            className={styles.button}
-            style={{
-              marginTop: "6px",
-              marginBottom: "6px", // Adds space below this button
-              borderRadius: "999px",
-              padding: "8px 14px",
-              backgroundColor: "#0078B3",
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-              fontWeight: "bold",
-              width: "100%",
-              maxWidth: "400px",
-              fontFamily: "'Inter', sans-serif"
-            
-            }}
-          >
-            Submit Claim
-          </button>
-            
-            <button
-            onClick={() => window.location.reload()} // Refreshes the page
-            className={styles.button}
-            style={{
-              marginBottom: "6px", // Adds space below this button
-              borderRadius: "999px",
-              padding: "8px 14px",
-              backgroundColor: "#0078B3", 
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-              fontWeight: "bold",
-              width: "100%",
-              maxWidth: "400px",
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
-            Verify Another Warranty
-          </button>
+              {/* Submit Claim Button */}
+  <button
+    onClick={() => window.open(`https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(warrantyData.warrantyID)}`, '_blank')}
+    className={styles.button}
+    style={{
+      marginTop: "6px",
+      marginBottom: "6px",
+      borderRadius: "999px",
+      padding: "8px 14px",
+      backgroundColor: "#0078B3",
+      color: "white",
+      border: "none",
+      cursor: "pointer",
+      fontWeight: "bold",
+      width: "100%",
+      maxWidth: "400px",
+      fontFamily: "'Inter', sans-serif"
+    }}
+  >
+    Submit Claim
+  </button>
+
+  {/* Flexbox for Side-by-Side Buttons */}
+  <div style={{
+      display: "flex",
+      justifyContent: "center",
+      gap: "10px",
+      marginBottom: "6px"
+  }}>
+    {/* Verify Another Warranty Button */}
+    <button
+      onClick={() => window.location.reload()} // Refreshes the page
+      className={styles.button}
+      style={{
+        borderRadius: "999px",
+        padding: "8px 14px",
+        backgroundColor: "#0078B3",
+        color: "white",
+        border: "none",
+        cursor: "pointer",
+        fontWeight: "bold",
+        width: "100%",
+        maxWidth: "190px",
+        fontFamily: "'Inter', sans-serif",
+      }}
+    >
+      Verify Another Warranty
+    </button>
+
+    {/* Warranty Information Button */}
+    <button
+      onClick={() => window.open('https://your-link-here.com', '_blank')} // Opens warranty info link
+      className={styles.button}
+      style={{
+        borderRadius: "999px",
+        padding: "8px 14px",
+        backgroundColor: "#0078B3",
+        color: "white",
+        border: "none",
+        cursor: "pointer",
+        fontWeight: "bold",
+        width: "100%",
+        maxWidth: "190px",
+        fontFamily: "'Inter', sans-serif",
+      }}
+    >
+      Warranty Information
+    </button>
             
 
               
