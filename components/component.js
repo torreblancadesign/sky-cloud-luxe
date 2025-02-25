@@ -58,7 +58,7 @@ const Component = () => {
   };
 
   return (
-    <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "20px", minHeight: "auto" }}>
+    <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "10px", minHeight: "auto" }}>
       <h2 style={{ color: "black", marginBottom: "6px", marginTop: "4px"}}>Certificate of Authenticity</h2>
       {!warrantyData ? (
         <>
