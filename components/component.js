@@ -27,7 +27,7 @@ const Component = () => {
         }
       );
 
-        if (!response.ok) {
+         if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
 
@@ -35,7 +35,9 @@ const Component = () => {
       if (data.records.length > 0) {
         const record = data.records[0].fields;
         setWarrantyData({
-          thumbnailImage: record["Thumbnail Image"] ? record["Thumbnail Image"][0].url : null,
+          thumbnailImage: record["Thumbnail Image"]
+            ? record["Thumbnail Image"][0].url
+            : null,
           model: record["Model"],
           brand: record["Brand"],
           referenceNumber: record["Reference Number"],
@@ -94,7 +96,8 @@ const Component = () => {
               textAlign: "center",
             }}
           >
-            Enter the 16-digit warranty code including dashes found on the back of your warranty card to view your watch details and/or to submit a claim.
+            Enter the 16-digit warranty code including dashes found on the back of
+            your warranty card to view your watch details and/or to submit a claim.
           </p>
           {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
           <form
@@ -102,7 +105,13 @@ const Component = () => {
             onSubmit={handleSubmit}
             style={{ width: "100%", maxWidth: "400px" }}
           >
-            <label style={{ display: "block", marginBottom: "6px", fontWeight: "bold" }}>
+            <label
+              style={{
+                display: "block",
+                marginBottom: "6px",
+                fontWeight: "bold",
+              }}
+            >
               Enter your warranty code (required)
             </label>
             <input
@@ -152,7 +161,6 @@ const Component = () => {
             width: "100%",
             maxWidth: "500px",
             minHeight: "auto",
-            
           }}
         >
           {warrantyData.thumbnailImage && (
@@ -168,18 +176,64 @@ const Component = () => {
               }}
             />
           )}
-          <h3 style={{ color: "#0078B3", marginBottom: "8px" }}>Warranty Details</h3>
-          {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
-          {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
-          {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
-          {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
-          {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
-          {warrantyData.dial && <p><strong>Dial:</strong> {warrantyData.dial}</p>}
-          {warrantyData.purchaseDate && <p><strong>Purchase Date:</strong> {warrantyData.purchaseDate}</p>}
-          {warrantyData.warrantyID && <p><strong>Warranty ID:</strong> {warrantyData.warrantyID}</p>}
-          {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
-          {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
-          {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
+          <h3 style={{ color: "#0078B3", marginBottom: "8px" }}>
+            Warranty Details
+          </h3>
+          {warrantyData.model && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Model:</strong> {warrantyData.model}
+            </p>
+          )}
+          {warrantyData.brand && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Brand:</strong> {warrantyData.brand}
+            </p>
+          )}
+          {warrantyData.referenceNumber && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Reference Number:</strong> {warrantyData.referenceNumber}
+            </p>
+          )}
+          {warrantyData.serialNumber && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Serial Number:</strong> {warrantyData.serialNumber}
+            </p>
+          )}
+          {warrantyData.band && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Band:</strong> {warrantyData.band}
+            </p>
+          )}
+          {warrantyData.dial && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Dial:</strong> {warrantyData.dial}
+            </p>
+          )}
+          {warrantyData.purchaseDate && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Purchase Date:</strong> {warrantyData.purchaseDate}
+            </p>
+          )}
+          {warrantyData.warrantyID && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Warranty ID:</strong> {warrantyData.warrantyID}
+            </p>
+          )}
+          {warrantyData.warrantyStart && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Warranty Start:</strong> {warrantyData.warrantyStart}
+            </p>
+          )}
+          {warrantyData.warrantyEnd && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Warranty End:</strong> {warrantyData.warrantyEnd}
+            </p>
+          )}
+          {warrantyData.warrantyStatus && (
+            <p style={{ marginBottom: "10px" }}>
+              <strong>Warranty Status:</strong> {warrantyData.warrantyStatus}
+            </p>
+          )}
 
           <button
             onClick={openClaimModal}
@@ -247,7 +301,14 @@ const Component = () => {
             </button>
           </div>
 
-          <p style={{ marginTop: "12px", fontSize: "14px", color: "#333", textAlign: "center" }}>
+          <p
+            style={{
+              marginTop: "12px",
+              fontSize: "14px",
+              color: "#333",
+              textAlign: "center",
+            }}
+          >
             Contact us:{" "}
             <a
               href="mailto:info@skycloudluxe.com"
