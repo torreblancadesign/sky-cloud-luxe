@@ -81,6 +81,8 @@ const Component = () => {
         alignItems: "center",
         paddingTop: "10px",
         minHeight: "auto",
+        boxShadow: "0 0 50px rgb(255 255 255 / 80%)"
+
       }}
     >
       <h2 style={{ color: "black", marginBottom: "6px", marginTop: "4px" }}>
