@@ -5,7 +5,7 @@ const Component = () => {
   const [warrantyNumber, setWarrantyNumber] = useState("");
   const [warrantyData, setWarrantyData] = useState(null);
   const [error, setError] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
   const [modalUrl, setModalUrl] = useState("");
 
   const handleSubmit = async (e) => {
