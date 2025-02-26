@@ -27,7 +27,7 @@ const Component = () => {
         }
       );
 
-      if (!response.ok) {
+       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
 
@@ -65,205 +65,196 @@ const Component = () => {
         warrantyData.warrantyID
       )}`;
       setModalUrl(claimUrl);
-      setIsModalOpen(true);
+      setModalOpen(true);
+    }
+  };
+
+  const handleWarrantyDetails = () => {
+    if (typeof window !== "undefined") {
+      window.location.href = "https://google.com";
+    }
+  };
+
+  const handleVerifyAnother = () => {
+    if (typeof window !== "undefined") {
+      window.location.reload();
     }
   };
 
   return (
     <div
-      className={styles.container}
       style={{
         display: "flex",
-        flexDirection: "column",
-        justifyContent: "flex-start",
+        justifyContent: "center",
         alignItems: "center",
         paddingTop: "10px",
-        minHeight: "auto",
+        minHeight: "100vh",
       }}
     >
-      <h2 style={{ color: "black", marginBottom: "6px", marginTop: "4px" }}>
-        Certificate of Authenticity
-      </h2>
-      {!warrantyData ? (
-        <>
-          <p
-            style={{
-              fontSize: "16px",
-              color: "#0078B3",
-              marginBottom: "12px",
-              textAlign: "center",
-            }}
-          >
-            Enter the 16-digit warranty code including dashes found on the back of your warranty card to view your watch details and/or to submit a claim.
-          </p>
-          {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
-          <form
-            className={styles.form}
-            onSubmit={handleSubmit}
-            style={{ width: "100%", maxWidth: "400px" }}
-          >
-            <label style={{ display: "block", marginBottom: "6px", fontWeight: "bold" }}>
-              Enter your warranty code (required)
-            </label>
-            <input
-              type="text"
-              className={styles.input}
-              value={warrantyNumber}
-              onChange={(e) => setWarrantyNumber(e.target.value)}
-              placeholder=" warranty number..."
-              style={{
-                borderRadius: "999px",
-                padding: "12px 20px",
-                border: "1px solid #ccc",
-                width: "100%",
-                outline: "none",
-              }}
-            />
+      {/* The card wrapper that always displays the shadow */}
+      <div
+        style={{
+          backgroundColor: "#f4f4f6",
+          borderRadius: "10px",
+          boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
+          padding: "12px",
+          width: "100%",
+          maxWidth: "500px",
+          textAlign: "center",
+        }}
+      >
+        <h2 style={{ color: "black", marginBottom: "6px", marginTop: "4px" }}>
+          Certificate of Authenticity
+        </h2>
+        {!warrantyData ? (
+          <>
+            <p style={{ fontSize: "16px", color: "#0078B3", marginBottom: "12px" }}>
+              Enter the 16-digit warranty code including dashes found on the back of your warranty card to view your watch details and/or to submit a claim.
+            </p>
+            {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
+            <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "400px", margin: "0 auto" }}>
+              <label style={{ display: "block", marginBottom: "6px", fontWeight: "bold" }}>
+                Enter your warranty code (required)
+              </label>
+              <input
+                type="text"
+                value={warrantyNumber}
+                onChange={(e) => setWarrantyNumber(e.target.value)}
+                placeholder=" warranty number..."
+                style={{
+                  borderRadius: "999px",
+                  padding: "12px 20px",
+                  border: "1px solid #ccc",
+                  width: "100%",
+                  outline: "none",
+                }}
+              />
+              <button
+                type="submit"
+                style={{
+                  borderRadius: "999px",
+                  padding: "12px 20px",
+                  backgroundColor: "#0078B3",
+                  color: "white",
+                  border: "none",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                  width: "100%",
+                  marginTop: "10px",
+                }}
+              >
+                Verify Warranty
+              </button>
+            </form>
+          </>
+        ) : (
+          <>
+            {warrantyData.thumbnailImage && (
+              <img
+                src={warrantyData.thumbnailImage}
+                alt="Product Thumbnail"
+                style={{
+                  maxWidth: "100%",
+                  height: "auto",
+                  maxHeight: "150px",
+                  borderRadius: "10px",
+                  marginBottom: "6px",
+                }}
+              />
+            )}
+            <h3 style={{ color: "#0078B3", marginBottom: "8px" }}>Warranty Details</h3>
+            {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
+            {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
+            {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
+            {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
+            {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
+            {warrantyData.dial && <p><strong>Dial:</strong> {warrantyData.dial}</p>}
+            {warrantyData.purchaseDate && <p><strong>Purchase Date:</strong> {warrantyData.purchaseDate}</p>}
+            {warrantyData.warrantyID && <p><strong>Warranty ID:</strong> {warrantyData.warrantyID}</p>}
+            {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
+            {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
+            {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
+
             <button
-              type="submit"
-              className={styles.button}
+              onClick={openClaimModal}
               style={{
+                marginBottom: "6px",
                 borderRadius: "999px",
-                padding: "12px 20px",
+                padding: "8px 14px",
                 backgroundColor: "#0078B3",
                 color: "white",
                 border: "none",
                 cursor: "pointer",
                 fontWeight: "bold",
                 width: "100%",
+                maxWidth: "400px",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            >
+              Submit Claim
+            </button>
+
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                gap: "10px",
                 marginTop: "10px",
               }}
             >
-              Verify Warranty
-            </button>
-          </form>
-        </>
-      ) : (
-        <div
-          style={{
-            textAlign: "center",
-            paddingTop: "12px",
-            paddingBottom: "12px",
-            paddingLeft: "12px",
-            paddingRight: "12px",
-            border: "0px solid #ccc",
-            borderRadius: "10px",
-            backgroundColor: "#f4f4f6",
-            width: "100%",
-            maxWidth: "500px",
-            minHeight: "auto",
-            boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
-          }}
-        >
-          {warrantyData.thumbnailImage && (
-            <img
-              src={warrantyData.thumbnailImage}
-              alt="Product Thumbnail"
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                maxHeight: "150px",
-                borderRadius: "10px",
-                marginBottom: "6px",
-              }}
-            />
-          )}
-          <h3 style={{ color: "#0078B3", marginBottom: "8px" }}>Warranty Details</h3>
-          {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
-          {warrantyData.brand && <p><strong>Brand:</strong> {warrantyData.brand}</p>}
-          {warrantyData.referenceNumber && <p><strong>Reference Number:</strong> {warrantyData.referenceNumber}</p>}
-          {warrantyData.serialNumber && <p><strong>Serial Number:</strong> {warrantyData.serialNumber}</p>}
-          {warrantyData.band && <p><strong>Band:</strong> {warrantyData.band}</p>}
-          {warrantyData.dial && <p><strong>Dial:</strong> {warrantyData.dial}</p>}
-          {warrantyData.purchaseDate && <p><strong>Purchase Date:</strong> {warrantyData.purchaseDate}</p>}
-          {warrantyData.warrantyID && <p><strong>Warranty ID:</strong> {warrantyData.warrantyID}</p>}
-          {warrantyData.warrantyStart && <p><strong>Warranty Start:</strong> {warrantyData.warrantyStart}</p>}
-          {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
-          {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
+              <button
+                onClick={handleWarrantyDetails}
+                style={{
+                  borderRadius: "999px",
+                  padding: "8px 14px",
+                  backgroundColor: "#0078B3",
+                  color: "white",
+                  border: "none",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                  width: "100%",
+                  maxWidth: "190px",
+                  fontFamily: "'Inter', sans-serif",
+                }}
+              >
+                Warranty Details
+              </button>
+              <button
+                onClick={handleVerifyAnother}
+                style={{
+                  borderRadius: "999px",
+                  padding: "8px 14px",
+                  backgroundColor: "#0078B3",
+                  color: "white",
+                  border: "none",
+                  cursor: "pointer",
+                  fontWeight: "bold",
+                  width: "100%",
+                  maxWidth: "190px",
+                  fontFamily: "'Inter', sans-serif",
+                }}
+              >
+                Verify Another Warranty
+              </button>
+            </div>
 
-          <button
-            onClick={openClaimModal}
-            className={styles.button}
-            style={{
-              marginBottom: "6px",
-              borderRadius: "999px",
-              padding: "8px 14px",
-              backgroundColor: "#0078B3",
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-              fontWeight: "bold",
-              width: "100%",
-              maxWidth: "400px",
-              fontFamily: "'Inter', sans-serif",
-            }}
-          >
-            Submit Claim
-          </button>
-
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              gap: "10px",
-              marginTop: "10px",
-            }}
-          >
-            <button
-              onClick={() => (window.location.href = "https://google.com")}
-              className={styles.button}
-              style={{
-                borderRadius: "999px",
-                padding: "8px 14px",
-                backgroundColor: "#0078B3",
-                color: "white",
-                border: "none",
-                cursor: "pointer",
-                fontWeight: "bold",
-                width: "100%",
-                maxWidth: "190px",
-                fontFamily: "'Inter', sans-serif",
-              }}
-            >
-              Warranty Details
-            </button>
-            <button
-              onClick={() => window.location.reload()}
-              className={styles.button}
-              style={{
-                borderRadius: "999px",
-                padding: "8px 14px",
-                backgroundColor: "#0078B3",
-                color: "white",
-                border: "none",
-                cursor: "pointer",
-                fontWeight: "bold",
-                width: "100%",
-                maxWidth: "190px",
-                fontFamily: "'Inter', sans-serif",
-              }}
-            >
-              Verify Another Warranty
-            </button>
-          </div>
-
-          <p style={{ marginTop: "12px", fontSize: "14px", color: "#333", textAlign: "center" }}>
-            Contact us:{" "}
-            <a
-              href="mailto:info@skycloudluxe.com"
-              style={{
-                color: "#0078B3",
-                textDecoration: "none",
-                fontWeight: "bold",
-              }}
-            >
-              info@skycloudluxe.com
-            </a>
-          </p>
-        </div>
-      )}
-
-      {isModalOpen && (
+            <p style={{ marginTop: "12px", fontSize: "14px", color: "#333" }}>
+              Contact us:{" "}
+              <a
+                href="mailto:info@skycloudluxe.com"
+                style={{
+                  color: "#0078B3",
+                  textDecoration: "none",
+                  fontWeight: "bold",
+                }}
+              >
+                info@skycloudluxe.com
+              </a>
+            </p>
+          </>
+        )}
+      </div>
+      {modalOpen && (
         <div
           style={{
             position: "fixed",
@@ -289,7 +280,7 @@ const Component = () => {
             }}
           >
             <button
-              onClick={() => setIsModalOpen(false)}
+              onClick={() => setModalOpen(false)}
               style={{
                 position: "absolute",
                 top: "10px",
