@@ -57,16 +57,49 @@ const Component = () => {
     }
   };
 
+  const openClaimModal = () => {
+    if (warrantyData && warrantyData.warrantyID) {
+      const claimUrl = `https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(
+        warrantyData.warrantyID
+      )}`;
+      setModalUrl(claimUrl);
+      setIsModalOpen(true);
+    }
+  };
+
   return (
-    <div className={styles.container} style={{ display: "flex", flexDirection: "column", justifyContent: "flex-start", alignItems: "center", paddingTop: "10px", minHeight: "auto" }}>
-      <h2 style={{ color: "black", marginBottom: "6px", marginTop: "4px"}}>Certificate of Authenticity</h2>
+    <div
+      className={styles.container}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        paddingTop: "10px",
+        minHeight: "auto",
+      }}
+    >
+      <h2 style={{ color: "black", marginBottom: "6px", marginTop: "4px" }}>
+        Certificate of Authenticity
+      </h2>
       {!warrantyData ? (
         <>
-          <p style={{ fontSize: "16px", color: "#0078B3", marginBottom: "12px", textAlign: "center"}}>
+          <p
+            style={{
+              fontSize: "16px",
+              color: "#0078B3",
+              marginBottom: "12px",
+              textAlign: "center",
+            }}
+          >
             Enter the 16-digit warranty code including dashes found on the back of your warranty card to view your watch details and/or to submit a claim.
           </p>
           {error && <p style={{ color: "red", marginBottom: "8px" }}>{error}</p>}
-          <form className={styles.form} onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "400px" }}>
+          <form
+            className={styles.form}
+            onSubmit={handleSubmit}
+            style={{ width: "100%", maxWidth: "400px" }}
+          >
             <label style={{ display: "block", marginBottom: "6px", fontWeight: "bold" }}>
               Enter your warranty code (required)
             </label>
@@ -104,9 +137,34 @@ const Component = () => {
           </form>
         </>
       ) : (
-        <div style={{ textAlign: "center", padding: "12px", border: "0px solid #ccc", borderRadius: "10px", backgroundColor: "#f4f4f6", width: "100%", maxWidth: "500px", minHeight: "auto" }}>
+        <div
+          style={{
+            textAlign: "center",
+            paddingTop: "12px",
+            paddingBottom: "12px",
+            paddingLeft: "12px",
+            paddingRight: "12px",
+            border: "0px solid #ccc",
+            borderRadius: "10px",
+            backgroundColor: "#f4f4f6",
+            width: "100%",
+            maxWidth: "500px",
+            minHeight: "auto",
+            boxShadow: "0 8px 16px rgba(0, 0, 0, 0.2)",
+          }}
+        >
           {warrantyData.thumbnailImage && (
-            <img src={warrantyData.thumbnailImage} alt="Product Thumbnail" style={{ maxWidth: "100%", height: "auto", maxHeight: "150px", borderRadius: "10px", marginBottom: "6px" }} />
+            <img
+              src={warrantyData.thumbnailImage}
+              alt="Product Thumbnail"
+              style={{
+                maxWidth: "100%",
+                height: "auto",
+                maxHeight: "150px",
+                borderRadius: "10px",
+                marginBottom: "6px",
+              }}
+            />
           )}
           <h3 style={{ color: "#0078B3", marginBottom: "8px" }}>Warranty Details</h3>
           {warrantyData.model && <p><strong>Model:</strong> {warrantyData.model}</p>}
@@ -121,15 +179,14 @@ const Component = () => {
           {warrantyData.warrantyEnd && <p><strong>Warranty End:</strong> {warrantyData.warrantyEnd}</p>}
           {warrantyData.warrantyStatus && <p><strong>Warranty Status:</strong> {warrantyData.warrantyStatus}</p>}
 
-            <button
-            
-            onClick={() => window.open(`https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(warrantyData.warrantyID)}`, '_blank')}
+          <button
+            onClick={openClaimModal}
             className={styles.button}
             style={{
-              marginBottom: "6px", // Adds space below this button
+              marginBottom: "6px",
               borderRadius: "999px",
               padding: "8px 14px",
-              backgroundColor: "#0078B3", 
+              backgroundColor: "#0078B3",
               color: "white",
               border: "none",
               cursor: "pointer",
@@ -141,32 +198,119 @@ const Component = () => {
           >
             Submit Claim
           </button>
-            
-            <button
-            onClick={() => window.location.reload()} // Refreshes the page            
-            className={styles.button}
+
+          <div
             style={{
+              display: "flex",
+              justifyContent: "space-between",
+              gap: "10px",
               marginTop: "10px",
-              borderRadius: "999px",
-              padding: "8px 14px",
-              backgroundColor: "#0078B3",
-              color: "white",
-              border: "none",
-              cursor: "pointer",
-              fontWeight: "bold",
-              width: "100%",
-              maxWidth: "400px",
-              fontFamily: "'Inter', sans-serif"
-            
             }}
           >
-            Verify Another Warranty
-          </button>
-              
+            <button
+              onClick={() => (window.location.href = "https://google.com")}
+              className={styles.button}
+              style={{
+                borderRadius: "999px",
+                padding: "8px 14px",
+                backgroundColor: "#0078B3",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+                fontWeight: "bold",
+                width: "100%",
+                maxWidth: "190px",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            >
+              Warranty Details
+            </button>
+            <button
+              onClick={() => window.location.reload()}
+              className={styles.button}
+              style={{
+                borderRadius: "999px",
+                padding: "8px 14px",
+                backgroundColor: "#0078B3",
+                color: "white",
+                border: "none",
+                cursor: "pointer",
+                fontWeight: "bold",
+                width: "100%",
+                maxWidth: "190px",
+                fontFamily: "'Inter', sans-serif",
+              }}
+            >
+              Verify Another Warranty
+            </button>
+          </div>
+
           <p style={{ marginTop: "12px", fontSize: "14px", color: "#333", textAlign: "center" }}>
-            Contact us: <a href="mailto:info@skycloudluxe.com" style={{ color: "#0078B3", textDecoration: "none", fontWeight: "bold" }}>info@skycloudluxe.com</a>
+            Contact us:{" "}
+            <a
+              href="mailto:info@skycloudluxe.com"
+              style={{
+                color: "#0078B3",
+                textDecoration: "none",
+                fontWeight: "bold",
+              }}
+            >
+              info@skycloudluxe.com
+            </a>
           </p>
-              
+        </div>
+      )}
+
+      {isModalOpen && (
+        <div
+          style={{
+            position: "fixed",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0,0,0,0.5)",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            zIndex: 1000,
+          }}
+        >
+          <div
+            style={{
+              position: "relative",
+              width: "90%",
+              maxWidth: "800px",
+              backgroundColor: "white",
+              borderRadius: "8px",
+              overflow: "hidden",
+            }}
+          >
+            <button
+              onClick={() => setIsModalOpen(false)}
+              style={{
+                position: "absolute",
+                top: "10px",
+                right: "10px",
+                backgroundColor: "transparent",
+                border: "none",
+                fontSize: "16px",
+                cursor: "pointer",
+                zIndex: 10,
+              }}
+            >
+              Close
+            </button>
+            <iframe
+              src={modalUrl}
+              style={{
+                width: "100%",
+                height: "80vh",
+                border: "none",
+              }}
+              title="Submit Claim"
+            />
+          </div>
         </div>
       )}
     </div>
