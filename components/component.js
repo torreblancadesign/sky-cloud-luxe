@@ -180,57 +180,57 @@ const Component = () => {
             Warranty Details
           </h3>
           {warrantyData.model && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Model:</strong> {warrantyData.model}
             </p>
           )}
           {warrantyData.brand && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Brand:</strong> {warrantyData.brand}
             </p>
           )}
           {warrantyData.referenceNumber && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Reference Number:</strong> {warrantyData.referenceNumber}
             </p>
           )}
           {warrantyData.serialNumber && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Serial Number:</strong> {warrantyData.serialNumber}
             </p>
           )}
           {warrantyData.band && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Band:</strong> {warrantyData.band}
             </p>
           )}
           {warrantyData.dial && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Dial:</strong> {warrantyData.dial}
             </p>
           )}
           {warrantyData.purchaseDate && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Purchase Date:</strong> {warrantyData.purchaseDate}
             </p>
           )}
           {warrantyData.warrantyID && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Warranty ID:</strong> {warrantyData.warrantyID}
             </p>
           )}
           {warrantyData.warrantyStart && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Warranty Start:</strong> {warrantyData.warrantyStart}
             </p>
           )}
           {warrantyData.warrantyEnd && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Warranty End:</strong> {warrantyData.warrantyEnd}
             </p>
           )}
           {warrantyData.warrantyStatus && (
-            <p style={{ marginBottom: "5px", marginTop: "5px" }}>
+            <p style={{ marginBottom: "10px", marginTop: "10px" }}>
               <strong>Warranty Status:</strong> {warrantyData.warrantyStatus}
             </p>
           )}
