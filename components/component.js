@@ -328,57 +328,57 @@ const Component = () => {
       )}
 
       {isModalOpen && (
-        <div
-          style={{
-            position: "fixed",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            backgroundColor: "rgba(0,0,0,0.5)",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            zIndex: 1000,
-          }}
-        >
-          <div
-            style={{
-              position: "relative",
-              width: "90%",
-              maxWidth: "800px",
-              backgroundColor: "white",
-              borderRadius: "8px",
-              overflow: "hidden",
-            }}
-          >
-            <button
-              onClick={() => setIsModalOpen(false)}
-              style={{
-                position: "absolute",
-                top: "10px",
-                right: "10px",
-                backgroundColor: "transparent",
-                border: "none",
-                fontSize: "16px",
-                cursor: "pointer",
-                zIndex: 10,
-              }}
-            >
-              Close
-            </button>
-            <iframe
-              src={modalUrl}
-              style={{
-                width: "100%",
-                height: "80vh",
-                border: "none",
-              }}
-              title="Submit Claim"
-            />
-          </div>
-        </div>
-      )}
+  <div
+    style={{
+      position: "fixed",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+      backgroundColor: "transparent", // Changed from "rgba(0,0,0,0.5)"
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      zIndex: 1000,
+    }}
+  >
+    <div
+      style={{
+        position: "relative",
+        width: "90%",
+        maxWidth: "800px",
+        backgroundColor: "white",
+        borderRadius: "8px",
+        overflow: "hidden",
+      }}
+    >
+      <button
+        onClick={() => setIsModalOpen(false)}
+        style={{
+          position: "absolute",
+          top: "10px",
+          right: "10px",
+          backgroundColor: "transparent",
+          border: "none",
+          fontSize: "16px",
+          cursor: "pointer",
+          zIndex: 10,
+        }}
+      >
+        Close
+      </button>
+      <iframe
+        src={modalUrl}
+        style={{
+          width: "100%",
+          height: "80vh",
+          border: "none",
+        }}
+        title="Submit Claim"
+      />
+    </div>
+  </div>
+)}
     </div>
   );
 };
