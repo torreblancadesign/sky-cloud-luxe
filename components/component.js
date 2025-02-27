@@ -309,6 +309,7 @@ const Component = () => {
               fontSize: "14px",
               color: "#333",
               textAlign: "center",
+              marginBottom: "0"
             }}
           >
             Contact us:{" "}
