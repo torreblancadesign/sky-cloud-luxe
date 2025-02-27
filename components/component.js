@@ -81,7 +81,7 @@ const Component = () => {
         alignItems: "center",
         paddingTop: "10px",
         minHeight: "auto",
-        boxShadow: "0 0 20px rgb(255 255 255 / 80%)"
+        boxShadow: "0 0 30px rgb(0 0 0 / 100%)"
 
       }}
     >
