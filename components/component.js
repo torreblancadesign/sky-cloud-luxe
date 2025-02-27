@@ -154,7 +154,7 @@ const Component = () => {
           style={{
             textAlign: "center",
             paddingTop: "12px",
-            paddingBottom: "12px",
+            paddingBottom: "0",
             paddingLeft: "12px",
             paddingRight: "12px",
             border: "0px solid #ccc",
