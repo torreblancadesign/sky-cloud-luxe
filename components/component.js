@@ -63,7 +63,7 @@ const Component = () => {
 
   const openClaimModal = () => {
     if (warrantyData && warrantyData.warrantyID) {
-      const claimUrl = `https://airtable.com/appeE4S87yKBhZZyb/pagHWmb1h8vIiDfUr/form?prefill_WarrantyID=${encodeURIComponent(
+      const claimUrl = `https://airtable.com/appeE4S87yKBhZZyb/shrRO1AtNJi2EkRYr?prefill_WarrantyID=${encodeURIComponent(
         warrantyData.warrantyID
       )}`;
       setModalUrl(claimUrl);
