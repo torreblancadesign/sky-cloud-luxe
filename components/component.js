@@ -86,7 +86,7 @@ const Component = () => {
       }}
     >
       <h2 style={{ color: "black", marginBottom: "6px", marginTop: "4px" }}>
-      {warrantyData ? "Certificate of Authenticity" : "Verify Your Warranty"}
+      {warrantyData ? "Certificate of Authenticity" : "Verify Your Timepiece"}
       </h2>
 
       {!warrantyData ? (
